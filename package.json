@@ -1,9 +1,9 @@
 {
   "name": "token",
   "version": "1.0.0",
-  "description": "Launch SwipeXYZ Tokens",
+  "description": "Launch MUHTASIM'S_ERC20 Tokens",
   "main": "index.js",
-  "author": "Softcent",
+  "author": "muhtasimfahim.com",
   "license": "MIT",
   "scripts": {
     "compile": "hardhat compile",

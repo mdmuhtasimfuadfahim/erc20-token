@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity =0.5.16;
 
-import "./interfaces/ISwipeXYZ_ERC20.sol";
+import "./interfaces/IMY_ERC20.sol";
 import "./libraries/SafeMath.sol";
 
-contract MY_ERC20 is ISwipeXYZ_ERC20 {
+contract MY_ERC20 is IMY_ERC20 {
     using SafeMath for uint256;
 
     string public constant name = "MUHTASIM'S_ERC20";
@@ -105,7 +105,7 @@ contract MY_ERC20 is ISwipeXYZ_ERC20 {
         bytes32 r,
         bytes32 s
     ) external {
-        require(deadline >= block.timestamp, "SwipeXYZ: EXPIRED");
+        require(deadline >= block.timestamp, "MUHTASIM'S_ERC20: EXPIRED");
         bytes32 digest = keccak256(
             abi.encodePacked(
                 "\x19\x01",
@@ -114,7 +114,7 @@ contract MY_ERC20 is ISwipeXYZ_ERC20 {
             )
         );
         address recoveredAddress = ecrecover(digest, v, r, s);
-        require(recoveredAddress != address(0) && recoveredAddress == owner, "SwipeXYZ: INVALID_SIGNATURE");
+        require(recoveredAddress != address(0) && recoveredAddress == owner, "MUHTASIM'S_ERC20: INVALID_SIGNATURE");
         _approve(owner, spender, value);
     }
 }
